@@ -7,10 +7,10 @@ on:
     branches: [ "main" ]
 
 jobs:
-    runs-on: ubuntu-latest
 
   build-db:
 
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -18,12 +18,16 @@ jobs:
       run: docker build . --file db/Dockerfile --tag my-image-name:$(date +%s)
   build-web:
 
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file web/Dockerfile --tag my-image-name:$(date +%s)
         
   build-words:
+
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
